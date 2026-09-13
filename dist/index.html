@@ -110,7 +110,7 @@
     const filterLabel={spot:'景點',food:'美食',transport:'交通',logistics:'後勤'};
     const tagMarkup=t=>{const type=eventType(t);return type!=='other'?`<button type="button" class="event-filter ${tagClass(t)}" data-filter="${type}" aria-label="只看${filterLabel[type]}">${t}</button>`:`<span class="event-filter ${tagClass(t)}">${t}</span>`};
     days.forEach((day,i)=>{
-      const b=document.createElement('button');b.className='day-chip';b.type='button';b.textContent=`${day.d} · ${day.date}`;b.setAttribute('aria-pressed',i===0);b.onclick=()=>showDay(i,true);nav.append(b);
+      const b=document.createElement('button');b.className='day-chip';b.type='button';b.textContent=`${day.date} · ${day.d}`;b.setAttribute('aria-pressed',i===0);b.onclick=()=>showDay(i,true);nav.append(b);
       const article=document.createElement('article');article.className='day-card'+(i===0?' active':'');article.id=`day-${i}`;article.innerHTML=`<header class="day-top"><small>${day.d} · ${day.date}</small><h3>${day.city}</h3><p class="stay">住宿｜${day.stay}</p></header><ol class="timeline">${day.events.map(e=>`<li class="event" data-type="${eventType(e[1])}"><div class="time">${e[0]}</div><div class="event-body"><div class="event-head"><h4>${e[2]}</h4>${tagMarkup(e[1])}</div><p>${e[3]}</p></div></li>`).join('')}</ol><p class="empty-filter">這一天沒有符合此類型的行程。</p>`;cards.append(article);
     });
     function applyFilter(filter){
