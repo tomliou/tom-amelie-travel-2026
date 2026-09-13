@@ -16,14 +16,14 @@
     .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,35,40,.08) 0%,rgba(8,35,40,.8) 78%),url('https://images.unsplash.com/photo-1666094597401-4221c183d493?auto=format&fit=crop&w=1800&q=82') center/cover}
     .hero::after{content:"PRG  →  CK  →  SZG  →  VIE";position:absolute;right:-1rem;top:2.5rem;font:700 clamp(1.8rem,8vw,6rem)/1 "Arial Narrow",sans-serif;letter-spacing:.12em;color:rgba(255,255,255,.12);white-space:nowrap;transform:rotate(3deg)}
     .hero-inner{position:relative;z-index:1;width:min(1120px,100%);margin:auto;padding:7rem 1.25rem 2.5rem}.eyebrow{font:700 .78rem/1.2 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#ffe0a8}.hero h1{max-width:720px;margin:.75rem 0 1rem;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(2.3rem,7vw,5.8rem);line-height:1.04;letter-spacing:-.03em}.hero p{max-width:620px;margin:0;color:#edf3f1;font-size:clamp(1rem,2vw,1.25rem)}
-    .day-nav{position:sticky;top:0;z-index:20;background:rgba(247,243,232,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.day-nav-inner{width:min(1120px,100%);margin:auto;display:flex;gap:.5rem;overflow:auto;padding:.75rem 1rem;scrollbar-width:none}.day-nav-inner::-webkit-scrollbar{display:none}.day-chip{border:1px solid #bfcac7;background:transparent;color:var(--teal);border-radius:999px;padding:.55rem .82rem;white-space:nowrap;cursor:pointer;min-height:44px}.day-chip[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}.day-chip:focus-visible,.open-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-    main{width:min(1120px,100%);margin:auto;padding:2rem 1rem 5rem}.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;margin-bottom:2rem}.panel{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:1.3rem;box-shadow:0 4px 18px rgba(20,45,50,.05)}.panel h2,.panel h3{margin:0 0 .75rem;font-family:"Noto Serif TC","Songti TC",serif}.route{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.route span{background:#e5eeee;color:var(--teal);padding:.35rem .65rem;border-radius:8px;font-weight:700}.route i{font-style:normal;color:var(--rose)}.notes{margin:0;padding-left:1.2rem}.notes li+li{margin-top:.35rem}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin:2.5rem 0 1rem}.section-head h2{margin:0;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(1.7rem,4vw,2.6rem)}.section-head p{margin:0;color:var(--muted)}
+    .day-nav{position:sticky;top:0;z-index:20;background:rgba(247,243,232,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.day-nav-inner{width:min(1120px,100%);margin:auto;display:flex;gap:.5rem;overflow:auto;padding:.75rem 1rem;scrollbar-width:none}.day-nav-inner::-webkit-scrollbar{display:none}.day-chip{border:1px solid #bfcac7;background:transparent;color:var(--teal);border-radius:999px;padding:.55rem .82rem;white-space:nowrap;cursor:pointer;min-height:44px}.day-chip[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}.day-chip:focus-visible,.filter-chip:focus-visible,.event-filter:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    main{width:min(1120px,100%);margin:auto;padding:1.2rem 1rem 5rem}.fold{margin-bottom:1.5rem}.fold>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:58px;padding:.85rem 1.1rem;background:var(--cream);border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 18px rgba(20,45,50,.05);cursor:pointer;font-family:"Noto Serif TC","Songti TC",serif;font-size:1.2rem;font-weight:700}.fold>summary::-webkit-details-marker{display:none}.fold>summary::after{content:"＋";display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:#e5eeee;color:var(--teal);font-family:system-ui,sans-serif;font-weight:500}.fold[open]>summary::after{content:"−"}.fold[open]>summary{border-radius:16px 16px 0 0}.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;padding:1rem;border:1px solid var(--line);border-top:0;border-radius:0 0 16px 16px;background:rgba(255,253,247,.56)}.panel{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:1.15rem}.panel h2,.panel h3{margin:0 0 .75rem;font-family:"Noto Serif TC","Songti TC",serif}.route{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.route span{background:#e5eeee;color:var(--teal);padding:.35rem .65rem;border-radius:8px;font-weight:700}.route i{font-style:normal;color:var(--rose)}.notes{margin:0;padding-left:1.2rem}.notes li+li{margin-top:.35rem}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin:1.5rem 0 1rem}.section-head h2{margin:0;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(1.7rem,4vw,2.6rem)}.section-head p{margin:.15rem 0 0;color:var(--muted)}.filters{display:flex;gap:.45rem;flex-wrap:wrap;justify-content:flex-end}.filter-chip{min-height:42px;border:1px solid #bfcac7;border-radius:999px;padding:.45rem .85rem;background:var(--cream);color:var(--teal);font-weight:700;cursor:pointer}.filter-chip[data-filter="food"]{color:#80510a;border-color:#e9c889}.filter-chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}.filter-chip[data-filter="food"][aria-pressed="true"]{background:#80510a;border-color:#80510a;color:#fff}
     .day-card{display:none;background:var(--cream);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.day-card.active{display:block}.day-top{padding:1.4rem;background:linear-gradient(120deg,var(--teal),#265d64);color:#fff}.day-top small{color:#cce2dd}.day-top h3{margin:.2rem 0;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(1.7rem,5vw,3rem);line-height:1.2}.stay{margin:.35rem 0 0;color:#f9dbab}
-    .timeline{list-style:none;margin:0;padding:0}.event{display:grid;grid-template-columns:7.2rem 1fr;border-top:1px solid var(--line)}.event:first-child{border-top:0}.time{padding:1.2rem 1rem;background:#f0eee5;font:700 .84rem/1.4 ui-monospace,monospace;color:var(--teal)}.event-body{padding:1rem 1.2rem}.event-head{display:flex;gap:.65rem;align-items:flex-start;justify-content:space-between}.event h4{margin:0;font-size:1.04rem}.tag{flex:none;border-radius:999px;padding:.2rem .55rem;font-size:.76rem;font-weight:700;background:#e2eeec;color:var(--teal)}.tag.food{background:#fff0d5;color:#80510a}.tag.alert{background:#f7dfdd;color:#863f39}.event p{margin:.35rem 0 0;color:#536468}.event strong{color:var(--rose)}
+    .timeline{list-style:none;margin:0;padding:0}.event{display:grid;grid-template-columns:7.2rem 1fr;border-top:1px solid var(--line)}.event:first-child{border-top:0}.event[hidden]{display:none}.time{padding:1.2rem 1rem;background:#f0eee5;font:700 .84rem/1.4 ui-monospace,monospace;color:var(--teal)}.event-body{padding:1rem 1.2rem}.event-head{display:flex;gap:.65rem;align-items:flex-start;justify-content:space-between}.event h4{margin:0;font-size:1.04rem}.event-filter{flex:none;border:0;border-radius:999px;padding:.25rem .6rem;font-size:.76rem;font-weight:700;background:#e2eeec;color:var(--teal)}button.event-filter{cursor:pointer}button.event-filter:hover{text-decoration:underline}.event-filter.food{background:#fff0d5;color:#80510a}.event-filter.alert{background:#f7dfdd;color:#863f39}.event p{margin:.35rem 0 0;color:#536468}.event strong{color:var(--rose)}.empty-filter{display:none;margin:0;padding:2rem;text-align:center;color:var(--muted)}.empty-filter.show{display:block}
     .tips{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}.tip{padding:1.2rem;border-top:4px solid var(--gold);background:#fff;border-radius:4px 4px 16px 16px}.tip h3{margin:0 0 .45rem;font-size:1rem}.tip p{margin:0;color:var(--muted)}
-    .checklist{margin-top:2.5rem;background:var(--teal);color:#fff;border-radius:24px;padding:clamp(1.25rem,4vw,2.2rem)}.checklist h2{font-family:"Noto Serif TC","Songti TC",serif;margin:0 0 1rem}.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}.check-item{display:flex;gap:.7rem;align-items:flex-start;background:rgba(255,255,255,.08);padding:.9rem;border-radius:12px}.check-item input{margin-top:.35rem;width:1.1rem;height:1.1rem;accent-color:var(--gold)}.emergency{grid-column:1/-1;border:1px solid rgba(255,255,255,.24);padding:1rem;border-radius:12px;color:#f8dfb4}.source{margin:2rem 0 0;text-align:center;color:var(--muted);font-size:.82rem}
-    @media(max-width:720px){.hero{min-height:56svh}.hero-inner{padding-bottom:1.7rem}.overview,.tips,.check-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:.3rem}.event{grid-template-columns:6.5rem minmax(0,1fr)}.time{padding:1rem .65rem;background:#edf1ea;border-right:1px dashed var(--line);font-size:.78rem;white-space:nowrap}.event-body{padding:1rem .85rem}.event-head{gap:.4rem}.event h4{font-size:1rem}.tag{font-size:.72rem;padding:.18rem .45rem}.day-card{border-radius:18px}.hero::after{top:1.5rem;font-size:2rem}.emergency{grid-column:auto}}
+    .check-fold{margin-top:2.5rem;background:var(--teal);color:#fff;border-radius:24px}.check-fold>summary{background:var(--teal);color:#fff;border-color:var(--teal);box-shadow:none;border-radius:24px;padding:1rem 1.4rem}.check-fold>summary::after{background:rgba(255,255,255,.12);color:#fff}.check-fold[open]>summary{border-radius:24px 24px 0 0}.checklist{padding:0 clamp(1.25rem,4vw,2.2rem) clamp(1.25rem,4vw,2.2rem)}.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}.check-item{display:flex;gap:.7rem;align-items:flex-start;background:rgba(255,255,255,.08);padding:.9rem;border-radius:12px}.check-item input{margin-top:.35rem;width:1.1rem;height:1.1rem;accent-color:var(--gold)}.emergency{grid-column:1/-1;border:1px solid rgba(255,255,255,.24);padding:1rem;border-radius:12px;color:#f8dfb4}.source{margin:2rem 0 0;text-align:center;color:var(--muted);font-size:.82rem}
+    @media(max-width:720px){.hero{min-height:56svh}.hero-inner{padding-bottom:1.7rem}.overview,.tips,.check-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:.3rem}.filters{justify-content:flex-start;margin-top:.75rem}.event{grid-template-columns:6.5rem minmax(0,1fr)}.time{padding:1rem .65rem;background:#edf1ea;border-right:1px dashed var(--line);font-size:.78rem;white-space:nowrap}.event-body{padding:1rem .85rem}.event-head{gap:.4rem}.event h4{font-size:1rem}.event-filter{font-size:.72rem;padding:.2rem .45rem}.day-card{border-radius:18px}.hero::after{top:1.5rem;font-size:2rem}.emergency{grid-column:auto}.fold>summary{min-height:54px}.check-fold{border-radius:18px}.check-fold>summary{border-radius:18px}.check-fold[open]>summary{border-radius:18px 18px 0 0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -42,13 +42,23 @@
   </nav>
 
   <main>
-    <section class="overview" aria-label="旅程摘要">
-      <div class="panel"><h2>旅行路線</h2><div class="route"><span>台灣</span><i>→</i><span>布拉格</span><i>→</i><span>庫倫洛夫</span><i>→</i><span>薩爾茲堡</span><i>→</i><span>國王湖</span><i>→</i><span>哈修塔特</span><i>→</i><span>維也納</span></div></div>
-      <div class="panel"><h3>先記住三件事</h3><ul class="notes"><li>石板路多，穿好走的鞋。</li><li>備妥 1–2 歐元硬幣。</li><li>門票、車票 QR Code 存手機截圖。</li></ul></div>
-    </section>
+    <details class="fold">
+      <summary>旅程摘要</summary>
+      <section class="overview" aria-label="旅程摘要內容">
+        <div class="panel"><h2>旅行路線</h2><div class="route"><span>台灣</span><i>→</i><span>布拉格</span><i>→</i><span>庫倫洛夫</span><i>→</i><span>薩爾茲堡</span><i>→</i><span>國王湖</span><i>→</i><span>哈修塔特</span><i>→</i><span>維也納</span></div></div>
+        <div class="panel"><h3>先記住三件事</h3><ul class="notes"><li>石板路多，穿好走的鞋。</li><li>備妥 1–2 歐元硬幣。</li><li>門票、車票 QR Code 存手機截圖。</li></ul></div>
+      </section>
+    </details>
 
     <section id="schedule">
-      <div class="section-head"><h2>每天怎麼走</h2><p>點選上方日期切換；資訊依原手冊重新編排。</p></div>
+      <div class="section-head">
+        <div><h2>每天怎麼走</h2><p>點日期切換，或只看想找的類型。</p></div>
+        <div class="filters" role="group" aria-label="篩選行程類型">
+          <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button class="filter-chip" type="button" data-filter="spot" aria-pressed="false">景點</button>
+          <button class="filter-chip" type="button" data-filter="food" aria-pressed="false">美食</button>
+        </div>
+      </div>
       <div id="dayCards"></div>
     </section>
 
@@ -58,16 +68,18 @@
       <article class="tip"><h3>山區裝備</h3><p>國王湖與鹽礦溫差明顯，採洋蔥式穿搭並隨身攜帶護照。</p></article>
     </section>
 
-    <section class="checklist" aria-labelledby="check-title">
-      <h2 id="check-title">出發前隨身檢核</h2>
-      <div class="check-grid">
-        <label class="check-item"><input type="checkbox"><span><strong>證件與財務</strong><br>護照、影本 2 份、信用卡 2–3 張、歐元零錢</span></label>
-        <label class="check-item"><input type="checkbox"><span><strong>票券與預約</strong><br>天文鐘、FlixBus、CK Shuttle、ÖBB、鹽礦、雙宮門票</span></label>
-        <label class="check-item"><input type="checkbox"><span><strong>電子與穿著</strong><br>網卡、換卡針、歐規轉接頭、行動電源、健行鞋、保暖衣物</span></label>
-        <label class="check-item"><input type="checkbox"><span><strong>手機離線備份</strong><br>登機證、住宿地址、車票 QR Code 與預約信截圖</span></label>
-        <div class="emergency"><strong>緊急聯絡</strong><br>歐洲求助 112 · 駐捷克辦事處 +420 603 845 258 · 奧地利辦事處 +43 664 345 0455 · 外交部急難救助 +886 800-085-095</div>
-      </div>
-    </section>
+    <details class="fold check-fold">
+      <summary>出發前隨身檢核</summary>
+      <section class="checklist" aria-label="出發前隨身檢核內容">
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox"><span><strong>證件與財務</strong><br>護照、影本 2 份、信用卡 2–3 張、歐元零錢</span></label>
+          <label class="check-item"><input type="checkbox"><span><strong>票券與預約</strong><br>天文鐘、FlixBus、CK Shuttle、ÖBB、鹽礦、雙宮門票</span></label>
+          <label class="check-item"><input type="checkbox"><span><strong>電子與穿著</strong><br>網卡、換卡針、歐規轉接頭、行動電源、健行鞋、保暖衣物</span></label>
+          <label class="check-item"><input type="checkbox"><span><strong>手機離線備份</strong><br>登機證、住宿地址、車票 QR Code 與預約信截圖</span></label>
+          <div class="emergency"><strong>緊急聯絡</strong><br>歐洲求助 112 · 駐捷克辦事處 +420 603 845 258 · 奧地利辦事處 +43 664 345 0455 · 外交部急難救助 +886 800-085-095</div>
+        </div>
+      </section>
+    </details>
     <p class="source">內容整理自使用者提供之 10 頁旅遊手冊；出發前仍請再次確認班次、票價與營業時間。</p>
   </main>
 
@@ -86,11 +98,25 @@
       {d:'D11',date:'10/13 二',city:'桃園 → 溫暖的家',stay:'旅程完成',events:[['05:30–06:30','後勤','抵達桃園第二航廈','入境、自動查驗通關、領取托運行李與免稅品。'],['06:30–08:00','交通','機場接送平安返家','搭預約接送專車或機捷，為 11 天旅程收尾。']]}
     ];
     const nav=document.querySelector('#dayNav'),cards=document.querySelector('#dayCards');
-    const tagClass=t=>/晚餐|美食|早餐/.test(t)?'food':/後勤/.test(t)?'alert':'';
+    let activeFilter='all';
+    const eventType=t=>/晚餐|美食|早餐|午餐|點心/.test(t)?'food':t==='景點'?'spot':'other';
+    const tagClass=t=>eventType(t)==='food'?'food':/後勤/.test(t)?'alert':'';
+    const tagMarkup=t=>{const type=eventType(t);return type==='spot'||type==='food'?`<button type="button" class="event-filter ${tagClass(t)}" data-filter="${type}" aria-label="只看${type==='food'?'美食':'景點'}">${t}</button>`:`<span class="event-filter ${tagClass(t)}">${t}</span>`};
     days.forEach((day,i)=>{
       const b=document.createElement('button');b.className='day-chip';b.type='button';b.textContent=`${day.d} · ${day.date}`;b.setAttribute('aria-pressed',i===0);b.onclick=()=>showDay(i,true);nav.append(b);
-      const article=document.createElement('article');article.className='day-card'+(i===0?' active':'');article.id=`day-${i}`;article.innerHTML=`<header class="day-top"><small>${day.d} · ${day.date}</small><h3>${day.city}</h3><p class="stay">住宿｜${day.stay}</p></header><ol class="timeline">${day.events.map(e=>`<li class="event"><div class="time">${e[0]}</div><div class="event-body"><div class="event-head"><h4>${e[2]}</h4><span class="tag ${tagClass(e[1])}">${e[1]}</span></div><p>${e[3]}</p></div></li>`).join('')}</ol>`;cards.append(article);
+      const article=document.createElement('article');article.className='day-card'+(i===0?' active':'');article.id=`day-${i}`;article.innerHTML=`<header class="day-top"><small>${day.d} · ${day.date}</small><h3>${day.city}</h3><p class="stay">住宿｜${day.stay}</p></header><ol class="timeline">${day.events.map(e=>`<li class="event" data-type="${eventType(e[1])}"><div class="time">${e[0]}</div><div class="event-body"><div class="event-head"><h4>${e[2]}</h4>${tagMarkup(e[1])}</div><p>${e[3]}</p></div></li>`).join('')}</ol><p class="empty-filter">這一天沒有符合此類型的行程。</p>`;cards.append(article);
     });
+    function applyFilter(filter){
+      activeFilter=filter;
+      document.querySelectorAll('.filter-chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.filter===filter));
+      document.querySelectorAll('.day-card').forEach(card=>{
+        let visible=0;
+        card.querySelectorAll('.event').forEach(event=>{const show=filter==='all'||event.dataset.type===filter;event.hidden=!show;if(show)visible++});
+        card.querySelector('.empty-filter').classList.toggle('show',visible===0);
+      });
+    }
+    document.querySelectorAll('.filter-chip').forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.filter)));
+    cards.addEventListener('click',e=>{const button=e.target.closest('.event-filter');if(button&&button.dataset.filter!=='other')applyFilter(button.dataset.filter)});
     function showDay(index,scroll){
       document.querySelectorAll('.day-card').forEach((c,i)=>c.classList.toggle('active',i===index));
       document.querySelectorAll('.day-chip').forEach((b,i)=>{b.setAttribute('aria-pressed',i===index);if(i===index)b.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});
