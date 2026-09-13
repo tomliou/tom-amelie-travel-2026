@@ -27,6 +27,10 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     .hero h1{white-space:nowrap}
     @media(max-width:720px){.hero h1{font-size:clamp(1.5rem,6vw,2.35rem)}}
+    .event h4,.event-notes,.source-copy{white-space:pre-line;overflow-wrap:anywhere}
+    .event-notes{margin:.7rem 0 0;line-height:1.8;color:var(--muted);font-size:1rem}
+    .event-details{margin-top:.65rem}.event-details summary{cursor:pointer;color:var(--teal);font-weight:700;min-height:44px;display:flex;align-items:center;gap:.5rem}.event-details summary::before{content:'＋'}.event-details[open] summary::before{content:'−'}
+    .source-overview{grid-column:1/-1;display:grid;gap:.8rem}.source-overview article{border-top:1px solid var(--line);padding-top:.8rem}.source-overview h3{margin:0}.source-overview p{margin:.35rem 0;overflow-wrap:anywhere}.source-copy{grid-column:1/-1;line-height:1.8}.source-copy p{margin:1rem 0}.time{white-space:normal!important;overflow-wrap:anywhere}
   </style>
 </head>
 <body>
@@ -60,6 +64,8 @@
     <details class="fold">
       <summary>旅程摘要</summary>
       <section class="overview" aria-label="旅程摘要內容">
+        <div id="sourceOverview" class="source-overview"></div>
+        <div id="sourceProse" class="source-copy"></div>
         <div class="panel"><h2>旅行路線</h2><div class="route"><span>台灣</span><i>→</i><span>布拉格</span><i>→</i><span>庫倫洛夫</span><i>→</i><span>薩爾茲堡</span><i>→</i><span>國王湖</span><i>→</i><span>哈修塔特</span><i>→</i><span>維也納</span></div></div>
         <div class="panel"><h3>先記住三件事</h3><ul class="notes"><li>石板路多，穿好走的鞋。</li><li>備妥 1–2 歐元硬幣。</li><li>門票、車票 QR Code 存手機截圖。</li></ul></div>
       </section>
@@ -89,8 +95,9 @@
     <p class="source">內容整理自使用者提供之 10 頁旅遊手冊；出發前仍請再次確認班次、票價與營業時間。</p>
   </main>
 
+  <script src="source-data.js"></script>
   <script>
-    const days = [
+    const dayMetadata = [
       {d:'D1',date:'10/3 六',city:'台灣 → 布拉格',stay:'機上過夜',events:[['20:30–21:30','交通','板橋出發前往桃園機場','包車前往，預留報到時間。'],['21:30–23:30','後勤','桃園機場報到','提早 2 小時抵達。'],['23:30–06:45','交通','CI067 直飛布拉格','已付訖，航程約 14 小時 5 分。']]},
       {d:'D2',date:'10/4 日',city:'布拉格 · 浪漫老城',stay:'ibis Praha Old Town',events:[['06:45–09:30','交通','抵達、進城與寄放行李','59 路 → 地鐵 A 線 → B 線；紙本票首段務必打卡。'],['09:30–12:30','景點','換匯、補水與老城廣場漫步','Alfa 換匯、Albert 買水；火藥塔、泰恩教堂與聖尼古拉教堂。'],['12:30–14:00','景點','天文鐘與舊市政廳登頂','電子票 450 CZK；看整點報時與塔頂全景。'],['14:00–16:30','美食','香腸、煙囪捲與查理大橋','部分攤位只收現金；順遊天鵝沙灘。'],['16:30–20:30','晚餐','電車回飯店、帝國咖啡館','18:30 已預訂；油封鴨腿、慢燉牛膝與帝國蛋糕。']]},
       {d:'D3',date:'10/5 一',city:'布拉格 · 城堡與河畔',stay:'ibis Praha Old Town',events:[['08:00–09:00','交通','Tram 15 → 22/23 上城堡','開通 24h 交通票，08:30 起排隊安檢。'],['09:00–12:30','景點','布拉格城堡深度巡禮','聖維特大教堂、舊皇宮、聖喬治大殿、黃金巷；由黑塔方向下山。'],['12:30–14:00','美食','U Glaubiců 捷克傳統午餐','12:30 已預訂；烤豬腳、炸起司與皮爾森生啤。'],['14:00–17:15','景點','藍儂牆、康帕島、跳舞的房子','續訪卡夫卡旋轉頭像，整點旋轉約 15 分鐘。'],['17:15–20:00','後勤','超市補給與飯店晚餐','採買隔日前往 CK 的車上早餐與乾糧。']]},
@@ -103,15 +110,27 @@
       {d:'D10',date:'10/12 一',city:'維也納 → 台灣',stay:'機上過夜',events:[['06:30–07:30','早餐','晨間輕食、飯店退房','車站外帶可頌、咖啡或三明治。'],['07:30–08:20','交通','ÖBB Railjet 直達機場','07:45 前到月台；市區票有效時補外圍差額。'],['08:30–11:25','後勤','報到、退稅與安檢','T3 華航 CI064；退稅品先到海關蓋章。'],['11:25–05:30','交通','CI064 飛返桃園','已付訖，航程約 12 小時 5 分。']]},
       {d:'D11',date:'10/13 二',city:'桃園 → 溫暖的家',stay:'旅程完成',events:[['05:30–06:30','後勤','抵達桃園第二航廈','入境、自動查驗通關、領取托運行李與免稅品。'],['06:30–08:00','交通','機場接送平安返家','搭預約接送專車或機捷，為 11 天旅程收尾。']]}
     ];
+    const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const days=dayMetadata.map((day,i)=>({...day,events:guideSource.days[String(i+1)].map(row=>row.cells)}));
+    document.querySelector('#sourceOverview').innerHTML=guideSource.overview.map(row=>`<article><h3>${escapeHtml(row[0])} · ${escapeHtml(row[1])}</h3><p>${escapeHtml(row[2])}</p><p>${escapeHtml(row[3])}</p></article>`).join('');
+    document.querySelector('#sourceProse').innerHTML=guideSource.prose.map(block=>`<p>${escapeHtml(block.text.split('📋')[0])}</p>`).join('');
+    const lastProse=guideSource.prose.at(-1).text;
+    const checklistLines=lastProse.split('\n').filter(line=>line.startsWith('•'));
+    const checkItems=document.querySelectorAll('.check-item span');
+    checklistLines.slice(0,3).forEach((line,i)=>{checkItems[i].textContent=line.replace(/^•\s*/, '')});
+    document.querySelector('.emergency').textContent=checklistLines[3].replace(/^•\s*/, '');
+    document.querySelector('.source').textContent=lastProse.slice(lastProse.indexOf('🌟'));
+    document.querySelector('.source').classList.add('source-copy');
+    const notesMarkup=text=>text?`<details class="event-details"><summary>重點攻略／備註</summary><div class="event-notes">${escapeHtml(text)}</div></details>`:'';
     const nav=document.querySelector('#dayNav'),cards=document.querySelector('#dayCards');
     let activeFilter='all';
-    const eventType=t=>/晚餐|美食|早餐|午餐|點心/.test(t)?'food':t==='景點'?'spot':t==='交通'?'transport':t==='後勤'?'logistics':'other';
+    const eventType=t=>/晚餐|美食|早餐|午餐|點心/.test(t)?'food':t==='景點'?'spot':t==='交通'?'transport':/後勤|住宿/.test(t)?'logistics':'other';
     const tagClass=t=>eventType(t)==='food'?'food':/後勤/.test(t)?'alert':'';
     const filterLabel={spot:'景點',food:'美食',transport:'交通',logistics:'後勤'};
     const tagMarkup=t=>{const type=eventType(t);return type!=='other'?`<button type="button" class="event-filter ${tagClass(t)}" data-filter="${type}" aria-label="只看${filterLabel[type]}">${t}</button>`:`<span class="event-filter ${tagClass(t)}">${t}</span>`};
     days.forEach((day,i)=>{
       const b=document.createElement('button');b.className='day-chip';b.type='button';b.textContent=`${day.date} · ${day.d}`;b.setAttribute('aria-pressed',i===0);b.onclick=()=>showDay(i,true);nav.append(b);
-      const article=document.createElement('article');article.className='day-card'+(i===0?' active':'');article.id=`day-${i}`;article.innerHTML=`<header class="day-top"><small>${day.d} · ${day.date}</small><h3>${day.city}</h3><p class="stay">住宿｜${day.stay}</p></header><ol class="timeline">${day.events.map(e=>`<li class="event" data-type="${eventType(e[1])}"><div class="time">${e[0]}</div><div class="event-body"><div class="event-head"><h4>${e[2]}</h4>${tagMarkup(e[1])}</div><p>${e[3]}</p></div></li>`).join('')}</ol><p class="empty-filter">這一天沒有符合此類型的行程。</p>`;cards.append(article);
+      const article=document.createElement('article');article.className='day-card'+(i===0?' active':'');article.id=`day-${i}`;article.innerHTML=`<header class="day-top"><small>${escapeHtml(day.date)} · ${day.d}</small><h3>${escapeHtml(day.city)}</h3><p class="stay">住宿｜${escapeHtml(day.stay)}</p></header><ol class="timeline">${day.events.map(e=>`<li class="event" data-type="${eventType(e[1])}"><div class="time">${escapeHtml(e[0]||'車程中')}</div><div class="event-body"><div class="event-head"><h4>${escapeHtml(e[2])}</h4>${tagMarkup(e[1])}</div>${notesMarkup(e[3])}</div></li>`).join('')}</ol><p class="empty-filter">這一天沒有符合此類型的行程。</p>`;cards.append(article);
     });
     function applyFilter(filter){
       activeFilter=filter;
