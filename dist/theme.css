@@ -59,7 +59,7 @@ main{width:min(var(--content-width),100%);margin:auto;padding:var(--space-5) var
 .day-top{padding:var(--space-5);background:var(--color-brand-strong);color:var(--color-surface);border-bottom:1px solid var(--color-brand-strong)}
 .day-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:var(--space-2) var(--space-4)}
 .day-top small{color:var(--color-surface);font-size:.875rem;letter-spacing:.08em;white-space:nowrap}
-.day-top h3{font-family:var(--font-heading);font-size:clamp(1.2rem,3.6vw,1.8rem);line-height:1.4;font-weight:600;color:var(--color-surface);margin:var(--space-1) 0}
+.day-top h3{font-family:var(--font-heading);font-size:clamp(1rem,2.9vw,1.45rem);line-height:1.4;font-weight:600;color:var(--color-surface);margin:var(--space-1) 0}
 .stay{margin:var(--space-2) 0 0;color:var(--color-surface);font-size:.9375rem}
 .timeline{list-style:none;margin:0;padding:0}.event{display:grid;grid-template-columns:8rem minmax(0,1fr);border-top:var(--border)}.event:first-child{border-top:0}.event[hidden]{display:none}
 .time{padding:var(--space-5) var(--space-3);background:var(--color-brand-soft);border-right:var(--border);color:var(--color-brand-strong);font:500 .875rem/1.7 var(--font-data);overflow-wrap:anywhere}
